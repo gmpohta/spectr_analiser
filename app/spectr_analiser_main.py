@@ -793,7 +793,7 @@ class InitData():
     scoll={'##':NODATAROW}  #единицы: м^2
     filename='config.txt'
     try:
-        f=open('config.txt','r')
+        f=open('app/config.txt','r')
         curdata=f.read()
         currdata=curdata.split('\n')
         flg=0
