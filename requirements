@@ -9,3 +9,4 @@ numpy
 scipy
 Pillow
 matplotlib
+pywin32
