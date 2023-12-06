@@ -1,1 +1,11 @@
+flake8
+flake8-bugbear 
+pep8-naming
+pylint
+black
+isort
 pyinstaller
+numpy
+scipy
+Pillow
+matplotlib

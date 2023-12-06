@@ -1,8 +1,0 @@
-flake8
-flake8-bugbear 
-pep8-naming
-pylint
-black
-mypy
-isort
-pyinstaller
