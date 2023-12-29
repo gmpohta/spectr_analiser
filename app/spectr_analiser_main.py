@@ -1111,12 +1111,7 @@ class AppoxProc:
             fr = []
             for itt in x:
                 fr.append(
-                    -self.aprxdP(itt)
-                    * (mgas * nq / 2 / itt) ** 0.5
-                    / nq
-                    / nq
-                    / scol
-                    * 1e-12
+                    -self.aprxdP(itt) * (mgas * nq / 2 / itt) ** 0.5 / nq**2 / scol * 1e-12
                 )
             for itt in range(len(x)):
                 if fr[itt] <= 0:
@@ -1203,25 +1198,14 @@ class AppoxProc:
             fr = []
             for itt in x:
                 fr.append(
-                    -self.aprxS.calcderspl(itt)
-                    * (mgas * nq / 2 / itt) ** 0.5
-                    / nq
-                    / nq
-                    / scol
-                    * 1e-12
+                    -self.aprxS.calcderspl(itt) * (mgas * nq / 2 / itt) ** 0.5 / nq**2 / scol * 1e-12
                 )
             for itt in range(len(x)):
                 if fr[itt] <= 0:
                     fr[itt] = 0
         except TypeError:
-            fr = (
-                -self.aprxS.calcderspl(x)
-                * (mgas * nq / 2 / x) ** 0.5
-                / nq
-                / nq
-                / scol
-                * 1e-12
-            )
+            fr = -self.aprxS.calcderspl(x) * (mgas * nq / 2 / x) ** 0.5 / nq**2 / scol * 1e-12
+
             if fr <= 0:
                 fr = 0
         return fr
